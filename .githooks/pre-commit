@@ -1,0 +1,6 @@
+#!/bin/sh
+# stamps the build version (YYYYMMDDHHSS) and renames the service-worker cache so clients refresh
+v=$(date +%Y%m%d%H%S)
+printf "const VERSION = '%s';\n" "$v" > version.js
+sed -i "s/^const V = '[^']*'/const V = 'webalchemy-$v'/" sw.js
+git add version.js sw.js

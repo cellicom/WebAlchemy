@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>WebAlchemy</title>
+<meta name="theme-color" content="#2b1b4d">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <img id="logo" src="logo.svg" alt="WebAlchemy">
+  <span id="count" class="tag"></span>
+  <nav>
+    <button id="b-clear" class="btn ic"></button>
+    <button id="b-forge" class="btn ic"></button>
+    <button id="b-goals" class="btn ic"></button>
+    <button id="b-list" class="btn ic"></button>
+    <button id="b-settings" class="btn ic"></button>
+  </nav>
+</header>
+<main>
+  <div id="board"><p id="hint"></p></div>
+  <div id="forge" hidden>
+    <p id="f-hint"></p>
+    <div class="slots"><div class="slot" data-s="0"></div><b>+</b><div class="slot" data-s="1"></div><b>=</b><div id="f-res"><div id="f-out"></div></div></div>
+    <button id="f-go" class="btn ic"></button>
+  </div>
+  <aside id="panel">
+    <input id="search" type="search" autocomplete="off">
+    <div id="list"></div>
+  </aside>
+</main>
+<footer id="foot"></footer>
+<dialog id="dlg-list" class="full"><div class="lhead"><b id="l-title"></b><button class="btn" id="l-close"></button></div><input id="l-search" type="search" autocomplete="off">
+  <div id="l-body"></div></dialog>
+<div id="toast"></div>
+<dialog id="dlg"><div id="dlg-body"></div><div class="actions"><span id="dlg-actions"></span><button class="btn" id="dlg-close"></button></div></dialog>
+<script src="data.js"></script>
+<script src="version.js"></script>
+<script src="game.js"></script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
+</body>
+</html>
